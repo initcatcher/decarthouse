@@ -1,26 +1,26 @@
-"use client";
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+'use client'
+import React, { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet'
 
 const GNB = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const navItems = [
-    { name: "개념", href: "#concept" },
-    { name: "진료안내", href: "#guide" },
-    { name: "소개", href: "#intro" },
-    { name: "공지", href: "#notice" },
-    { name: "엑세스", href: "#access" },
-  ];
+    { name: '개념', href: '#concept' },
+    { name: '진료안내', href: '#guide' },
+    { name: '소개', href: '#intro' },
+    { name: '공지', href: '#notice' },
+    { name: '엑세스', href: '#access' },
+  ]
 
   return (
     <header className="w-full border-b bg-white">
@@ -50,6 +50,20 @@ const GNB = () => {
 
         {/* Tel Button */}
         <div className="hidden md:flex">
+          <Button
+            asChild
+            variant="default"
+            className="bg-[#03C75A] text-white hover:bg-[#02B14F] font-medium rounded-lg shadow-md transition"
+          >
+            <a
+              href="https://naver.me/FDQheUjd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              스마트 스토어
+            </a>
+          </Button>
+
           <Button variant="ghost">TEL: 010-1234-5678</Button>
         </div>
 
@@ -96,7 +110,7 @@ const GNB = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default GNB;
+export default GNB
