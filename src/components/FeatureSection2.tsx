@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function FeatureSection2() {
   const containerVariants = {
@@ -10,22 +10,22 @@ export default function FeatureSection2() {
       opacity: 1,
       y: 0,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 50,
         damping: 10,
         staggerChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  }
 
   return (
     <motion.div
-      className="flex flex-col-reverse lg:flex-row-reverse items-center gap-8"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
@@ -52,16 +52,17 @@ export default function FeatureSection2() {
         className="flex-1 relative w-full"
         variants={itemVariants}
         style={{
-          aspectRatio: "4 /3",
+          aspectRatio: '3 / 2',
         }}
       >
         <Image
-          src="/images/section1.jpeg" // 실제 이미지 경로로 변경하세요
+          src="/images/section2.jpg" // 실제 이미지 경로로 변경하세요
           alt="Portrait of a doctor"
           fill
+          className="rounded-lg object-cover shadow-md"
           sizes="(max-width: 640px) 100vw, (min-width: 641px) 50vw"
         />
       </motion.div>
     </motion.div>
-  );
+  )
 }

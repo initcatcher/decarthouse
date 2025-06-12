@@ -1,6 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+'use client'
+import { motion } from 'framer-motion'
 
 const Profile = () => {
   const containerVariants = {
@@ -10,12 +9,12 @@ const Profile = () => {
         staggerChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  }
 
   return (
     <motion.div
@@ -27,46 +26,52 @@ const Profile = () => {
     >
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6">
         {/* Profile Image */}
-        <motion.div
+        {/* <motion.div
           className="w-full flex-1 flex justify-center"
           variants={itemVariants}
         >
           <div className="relative w-full lg:w-[300px] lg:h-[300px] aspect-square">
             <Image
               src="/images/figure.png" // 실제 이미지 경로로 변경하세요
-              alt="이동훈"
+              alt="토마스"
               fill
               className="rounded-lg object-cover shadow-md"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Profile Content */}
         <motion.div
           className="w-full flex-1 text-gray-800"
           variants={itemVariants}
         >
-          <h1 className="text-2xl mb-4">이동훈</h1>
+          <h1 className="text-2xl mb-4">이동훈(토마스)</h1>
           <p className="text-base leading-relaxed mb-4">
-            요코하마 시립 대학 의학부 졸업
+            대학원에서 생물공학을 전공한 후 의과대학에서 통합의학을 전공하였다.
             <br />
-            의료법인 미나토미라이 이사장/의학박사
+            현재 암 환자를 돕는 데카르트하우스 &lt;내면의 들판 연구소&gt;의
+            앵거프리 프로젝트의 대표 활동가
             <br />
-            일본 당뇨병 학회 당뇨병 전문의·연수 지도 의
+            암 환자들을 대변하는 통합의학 컨설턴트
             <br />
-            미국 당뇨병학회 정회원(Professional Section Member)
+            사이먼튼 심리상담가
+          </p>
+          <p className="text-base leading-relaxed mb-4">
+            2018년 49세로 반짇고리형 위암 림프 전이 진단으로 위 전체 적출 후
+            식도와 소장을 연결하는 수술과 세포독성 항암을 권유받았다. 그러나
+            그는 수술과 화학 항암요법을 받지 않았고, 암세포에 대항하지도 않았다.
+            치유를 위해서 통합의학에 근거하여 마음과 몸의 제독과 영양 보급에
+            헌신적이었고, 암 치유의 가장 큰 걸림돌이 스트레스와 심리적
+            불안증이라고 생각하여 암 전문 심리치료와 알아차림 명상에 열중하였다.
           </p>
           <p className="text-base leading-relaxed">
-            미국 마운트 사이나이 의과 대학 조교수, 국제 의료 복지 대학 교수,
-            요코하마 시립 대학 교수를 거쳐 매달 5000명 이상의 당뇨병, 3000명
-            이상의 수면 무호흡 환자가 통원하는 의료법인 미나토미라이의 대표로
-            환자 씨의 일상 데이터를 전자화하고 과학적 의료를 실현하는 것을
-            목표로 매일 활동하고 있다.
+            결국 그는 생활 습관의 극적인 전환을 이루었고 스스로 암의 자연관해를
+            성공시켰다.
           </p>
         </motion.div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
