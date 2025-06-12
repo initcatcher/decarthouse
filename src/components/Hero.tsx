@@ -14,14 +14,14 @@ export default function Hero() {
       <div className="relative z-10 flex items-center justify-center sm:justify-start h-full text-center sm:text-left px-4">
         <div className="text-white">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl leading-snug">
-            내면의 가치를 향한 여정
+            내면의 <span className="text-red-400">가치</span>를 향한 여정
             <br />
-            마음을 비워내는 치유의 시간
+            마음을 비워내는 <span className="text-red-400">치유</span>의 시간
           </h1>
           <p className="mt-4 text-sm sm:text-base">
             당신의 마음을 편안하게 할 수 있는 시간
           </p>
-          <Button className="mt-6 px-6 py-3 text-sm sm:text-base bg-white text-black font-medium rounded-md shadow-lg hover:bg-gray-200">
+          <Button className="mt-6 px-6 py-3 text-sm sm:text-base bg-white text-black font-medium rounded-md shadow-lg hover:bg-red-50 hover:text-red-600 transition-colors">
             상담 예약하기
           </Button>
         </div>

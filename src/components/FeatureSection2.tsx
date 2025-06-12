@@ -34,9 +34,9 @@ export default function FeatureSection2() {
       {/* Left: Text Content */}
       <motion.div className="flex-1" variants={itemVariants}>
         <h2 className="text-2xl sm:text-3xl sm:leading-relaxed text-gray-900 mb-4">
-          암환자들의 고충을
+          <span className="text-red-600">암환자들</span>의 고충을
           <br />
-          종합적으로 진료합니다
+          <span className="text-red-600">종합</span>적으로 진료합니다
         </h2>
         <p className="text-gray-700 text-base leading-relaxed sm:text-lg sm:leading-loose">
           사이먼트 심리치료는 암 환자들의 심리적 안정과 정서적 회복을 돕는

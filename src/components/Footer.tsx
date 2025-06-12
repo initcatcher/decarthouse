@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -30,7 +30,9 @@ const Footer = () => {
 
           {/* Consultation Hours */}
           <div className="overflow-auto">
-            <h2 className="text-sm font-semibold mb-2">진료시간</h2>
+            <h2 className="text-sm font-semibold mb-2">
+              <span className="text-red-600">진료시간</span>
+            </h2>
             <table className="text-sm text-center text-gray-700 border-collapse border border-gray-300 w-full max-w-lg">
               <thead>
                 <tr>
@@ -47,49 +49,49 @@ const Footer = () => {
               <tbody>
                 <tr>
                   <td className="py-2  border border-gray-300">오전</td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-gray-400">
                     ×
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-gray-400">
                     ×
                   </td>
                 </tr>
                 <tr>
                   <td className="py-2 border border-gray-300">오후</td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-red-600">
                     ○
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-gray-400">
                     ×
                   </td>
-                  <td className="py-2 px-3 border border-gray-300 text-center">
+                  <td className="py-2 px-3 border border-gray-300 text-center text-gray-400">
                     ×
                   </td>
                 </tr>
@@ -110,7 +112,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

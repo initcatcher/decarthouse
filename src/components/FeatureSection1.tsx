@@ -33,9 +33,9 @@ export default function FeatureSection1() {
       {/* Left: Text Content */}
       <motion.div className="flex-1" variants={itemVariants}>
         <h2 className="text-2xl sm:text-3xl sm:leading-relaxed text-gray-900 mb-4">
-          사이먼튼 심리치료
+          <span className="text-red-600">사이먼튼</span> 심리치료
           <br />
-          새로운 관점으로 암을 바라보다
+          새로운 관점으로 <span className="text-red-600">암</span>을 바라보다
         </h2>
         <p className="text-gray-700 text-base leading-relaxed sm:text-lg sm:leading-loose">
           오래전부터 우리에게 암에 대해 의학적 결론만을 따르게 한 탓으로 암을

@@ -45,16 +45,20 @@ const Profile = () => {
           className="w-full flex-1 text-gray-800"
           variants={itemVariants}
         >
-          <h1 className="text-2xl mb-4">이동훈(토마스)</h1>
+          <h1 className="text-2xl mb-4">
+            이동훈(<span className="text-red-600">토마스</span>)
+          </h1>
           <p className="text-base leading-relaxed mb-4">
             대학원에서 생물공학을 전공한 후 의과대학에서 통합의학을 전공하였다.
             <br />
             현재 암 환자를 돕는 데카르트하우스 &lt;내면의 들판 연구소&gt;의
-            앵거프리 프로젝트의 대표 활동가
+            <span className="text-red-600">앵거프리 프로젝트</span>의 대표
+            활동가
             <br />
-            암 환자들을 대변하는 통합의학 컨설턴트
+            <span className="text-red-600">암 환자들</span>을 대변하는 통합의학
+            컨설턴트
             <br />
-            사이먼튼 심리상담가
+            <span className="text-red-600">사이먼튼</span> 심리상담가
           </p>
           <p className="text-base leading-relaxed mb-4">
             2018년 49세로 반짇고리형 위암 림프 전이 진단으로 위 전체 적출 후

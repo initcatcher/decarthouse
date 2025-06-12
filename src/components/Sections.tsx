@@ -47,12 +47,14 @@ const Sections = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
     >
-      <h1 className="text-2xl mb-6">통합의학적 치료</h1>
+      <h1 className="text-2xl mb-6">
+        <span className="text-red-600">통합의학적</span> 치료
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {sections.map((section, index) => (
           <motion.div
             key={index}
-            className="border rounded-lg shadow-md p-4 hover:shadow-lg transition"
+            className="border rounded-lg shadow-md p-4 hover:shadow-lg hover:border-red-200 transition-all"
             variants={itemVariants}
           >
             <h2 className="text-xl mb-2">{section.title}</h2>
