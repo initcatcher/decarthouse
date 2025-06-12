@@ -20,6 +20,8 @@ const Notice = () => {
   const [blogData, setBlogData] = useState<BlogData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 5
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -58,6 +60,29 @@ const Notice = () => {
 
   const handlePostClick = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
+  // 최신글부터 정렬하고 페이지네이션 로직
+  const sortedPosts =
+    blogData?.posts.sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    }) || []
+
+  const totalPages = Math.ceil(sortedPosts.length / postsPerPage)
+  const startIndex = (currentPage - 1) * postsPerPage
+  const endIndex = startIndex + postsPerPage
+  const currentPosts = sortedPosts.slice(startIndex, endIndex)
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1))
+  }
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+  }
+
+  const handlePageClick = (page: number) => {
+    setCurrentPage(page)
   }
 
   if (loading) {
@@ -106,7 +131,7 @@ const Notice = () => {
       </div>
 
       <div className="space-y-4">
-        {blogData?.posts.map((post) => (
+        {currentPosts.map((post) => (
           <motion.div
             key={post.logNo}
             className="border-b pb-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200 p-3 rounded-lg"
@@ -137,7 +162,52 @@ const Notice = () => {
         ))}
       </div>
 
-      {blogData?.posts.length === 0 && (
+      {/* 페이지네이션 UI */}
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center mt-8 space-x-2">
+          <button
+            onClick={handlePreviousPage}
+            disabled={currentPage === 1}
+            className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            이전
+          </button>
+
+          <div className="flex space-x-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageClick(page)}
+                className={`px-3 py-2 text-sm font-medium rounded-md ${
+                  currentPage === page
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-500 bg-white border border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            다음
+          </button>
+        </div>
+      )}
+
+      {/* 페이지 정보 */}
+      {sortedPosts.length > 0 && (
+        <div className="text-center mt-4 text-sm text-gray-500">
+          총 {sortedPosts.length}개의 포스트 중 {startIndex + 1}-
+          {Math.min(endIndex, sortedPosts.length)}번째 표시
+        </div>
+      )}
+
+      {sortedPosts.length === 0 && (
         <div className="text-center py-8 text-gray-500">
           <p>블로그 포스트가 없습니다.</p>
         </div>
