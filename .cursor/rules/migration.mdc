@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+original 폴더에 있는 내용 마이그레이션하고 있어.
+
+해당사이트는 jquery 를 사용해서 구현되었는데
+next.js 를 사용해서 마이그레이션 해야해.
+
+# 요구사항
+- 기존 scss, css 파일을 보고 분석해. 이미 scss,  css 는 루트 app 폴더 안에 있어.
+- next.js 에서 필요없는 부분은 옮기지마.
+- jquery에서 에니매이션 구현된것 nextjs 에서 framer-motion 으로 구현해줘.
+

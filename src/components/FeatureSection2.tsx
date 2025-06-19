@@ -4,20 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function FeatureSection2() {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring',
-        stiffness: 50,
-        damping: 10,
-        staggerChildren: 0.3,
-      },
-    },
-  }
-
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -29,7 +15,6 @@ export default function FeatureSection2() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
-      variants={containerVariants}
     >
       {/* Left: Text Content */}
       <motion.div className="flex-1" variants={itemVariants}>

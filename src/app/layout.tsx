@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 // import { Geist, Geist_Mono } from "next/font/google";
-import './globals.css'
-import GNB from '@/components/GNB'
-import Container from '@/components/Container'
+import './styles.css'
+// import GNB from '@/components/GNB'
+// import Container from '@/components/Container'
 
 import localFont from 'next/font/local'
 
@@ -34,9 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={esamanru.variable}>
-      <body className={`font-sans antialiased supress`}>
-        <GNB />
-        <Container>{children}</Container>
+      <body className="supress page-home">
+        {/* <GNB /> */}
+        {children}
+        {/* <Container>{children}</Container> */}
       </body>
     </html>
   )

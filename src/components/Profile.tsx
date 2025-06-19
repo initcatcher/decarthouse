@@ -52,11 +52,13 @@ const Profile = () => {
             대학원에서 생물공학을 전공한 후 의과대학에서 통합의학을 전공하였다.
             <br />
             현재 암 환자를 돕는 데카르트하우스 &lt;내면의 들판 연구소&gt;의
+            &nbsp;
             <span className="text-red-600">앵거프리 프로젝트</span>의 대표
             활동가
             <br />
             <span className="text-red-600">암 환자들</span>을 대변하는 통합의학
             컨설턴트
+            <br />
             <br />
             <span className="text-red-600">사이먼튼</span> 심리상담가
           </p>
