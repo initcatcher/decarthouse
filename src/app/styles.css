@@ -1781,7 +1781,6 @@ header .sptel {
 /* .top_doctor
 -------------------- */
 .top_doctor {
-  background: url(/img/dr-shunichi_tanaka.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -1809,9 +1808,9 @@ header .sptel {
 
 .top_doctor .wrap {
   max-width: 1100px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   position: relative;
 }
 
@@ -1893,11 +1892,21 @@ header .sptel {
   }
 }
 
+
+
 .top_doctor .prof {
   text-align: left;
   -ms-flex-preferred-size: 33%;
   flex-basis: 33%;
   padding-right: 1%;
+  margin-left: 20%;
+}
+
+@media (max-width: 768px) {
+  .prof {
+   display: block;
+   margin-left: -15%;
+ }
 }
 
 .top_doctor .prof h3 {

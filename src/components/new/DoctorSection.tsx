@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 // import InViewWrapper from './InViewWrapper'
 
@@ -14,7 +15,17 @@ const fadeInUp = {
 
 export default function DoctorSection() {
   return (
-    <section className="top_doctor">
+    <section className="top_doctor" style={{ position: 'relative' }}>
+      <Image 
+        src="/img/dr-shunichi_토마스.jpg" 
+        alt="원장 배경" 
+        fill
+        priority
+        style={{
+          objectFit: 'cover',
+          zIndex: -1
+        }}
+      />
       {/* <InViewWrapper animation="inv" className="cover">
         <div></div>
       </InViewWrapper> */}
@@ -22,9 +33,6 @@ export default function DoctorSection() {
         <h2>
           <span className="narw">원장소개</span>
         </h2>
-        <p className="img">
-          <img src="/img/drtanaka_sp.jpg" alt="원장" width={400} height={500} />
-        </p>
         <motion.div
           className="prof"
           variants={fadeInUp}
