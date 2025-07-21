@@ -360,7 +360,7 @@ export default function TopNavigation() {
                   className="narw92"
                   style={{ transform: 'translateY(-2px)' }}
                 >
-                  의사소개
+                  인물소개
                 </span>
               </InViewWrapper>
 

@@ -1,0 +1,1 @@
+export const PHONE_NUMBER = '010-8911-1011'

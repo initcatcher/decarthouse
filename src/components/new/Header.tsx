@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import InViewWrapper from './InViewWrapper'
+import { PHONE_NUMBER } from './utils'
 
 // Smooth scroll 함수
 const smoothScrollTo = (targetId: string) => {
@@ -52,7 +53,7 @@ export default function Header() {
           <div className="phone">
             <span className="contact">예약 및 문의</span>
             <span className="num">
-              <Link href="tel:010-2222-3333">010-2222-3333</Link>
+              <Link href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</Link>
             </span>
           </div>
         </div>

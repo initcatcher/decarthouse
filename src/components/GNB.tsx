@@ -10,6 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
+import { PHONE_NUMBER } from './new/utils'
 
 const GNB = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -64,7 +65,7 @@ const GNB = () => {
             </a>
           </Button>
 
-          <Button variant="ghost">TEL: 010-1234-5678</Button>
+          <Button variant="ghost">TEL: {PHONE_NUMBER}</Button>
         </div>
 
         {/* Mobile Menu Button */}
