@@ -45,9 +45,6 @@ export default function Footer() {
               <section className="treat flex">
                 <h3>진료내용</h3>
                 <p className="con">
-                  당뇨병, 생활습관병（고혈압・지질이상증/고지혈증, 통풍 등）,
-                  갑상선질환（바세도우병・하시모토병・갑상선종양 등）,
-                  수면무호흡증후군(SAS), 일반내과 ※각종보험적용
                 </p>
               </section>
               <div className="times">
@@ -103,7 +100,7 @@ export default function Footer() {
               {/* <InViewWrapper animation="inv" className="cover">
                 <div></div>
               </InViewWrapper> */}
-              <iframe
+              {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d810.3125317565235!2d139.76388454090392!3d35.67084265817415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x316b049f848a74aa!2z6YqA5bqn44Kv44Oq44OL44OD44Kv!5e0!3m2!1sen!2sjp!4v1605104933795!5m2!1sen!2sjp"
                 width="100%"
                 height="415"
@@ -112,7 +109,7 @@ export default function Footer() {
                 allowFullScreen={false}
                 aria-hidden="false"
                 tabIndex={0}
-              />
+              /> */}
             </div>
             {/* <InViewWrapper animation="inview" className="flex"> */}
             <div className="footer-map">

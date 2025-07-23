@@ -95,11 +95,11 @@ export default function ConceptSection() {
                 긍정적인 마음가짐을 통해 치유력을 극대화하는 데 중점을 둡니다.
               </p>
             </InViewWrapper>
-            <InViewWrapper animation="inview" className="btn">
+            {/* <InViewWrapper animation="inview" className="btn">
               <p>
                 <Link href="/concept/">진료 컨셉</Link>
               </p>
-            </InViewWrapper>
+            </InViewWrapper> */}
           </motion.div>
           <div className="slides">
             {/* <InViewWrapper animation="inv" className="cover">

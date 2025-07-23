@@ -24,7 +24,7 @@ export default function MainPage() {
 
         <ConceptSection />
         <MedicalGuideSection />
-        <NewsSection />
+        {/* <NewsSection /> */}
         <DoctorSection />
 
         <Footer />

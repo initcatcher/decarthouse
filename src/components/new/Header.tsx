@@ -90,7 +90,7 @@ export default function Header() {
         <div id="nav-content">
           <ul>
             <li>
-              <Link href="/concept/" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#" onClick={() => setIsMenuOpen(false)}>
                 <InViewWrapper animation="opin">
                   <span className="narw92">컨셉</span>
                   <span className="line"></span>
@@ -106,40 +106,40 @@ export default function Header() {
               </span>
               <ul className="menu-child">
                 <li>
-                  <Link href="/diabetes/" onClick={() => setIsMenuOpen(false)}>
-                    <span className="narw92">당뇨병</span>
+                  <Link href="#" onClick={() => setIsMenuOpen(false)}>
+                    <span className="narw92">통합의학</span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/lifestyle-diseases/"
+                    href="#"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <span className="narw92">생활습관병</span>
+                    <span className="narw92">사이먼튼테라피</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/thyroid/" onClick={() => setIsMenuOpen(false)}>
-                    <span className="narw92">내분비·갑상선</span>
+                  <Link href="#/" onClick={() => setIsMenuOpen(false)}>
+                    <span className="narw92">생활습관의학</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sas/" onClick={() => setIsMenuOpen(false)}>
-                    <span className="narw92">수면무호흡증</span>
+                  <Link href="#" onClick={() => setIsMenuOpen(false)}>
+                    <span className="narw92">앵거 매니지먼트</span>
                   </Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/doctors/" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#" onClick={() => setIsMenuOpen(false)}>
                 <InViewWrapper animation="opin">
-                  <span className="narw92">의사소개</span>
+                  <span className="narw92">인물소개</span>
                   <span className="line"></span>
                 </InViewWrapper>
               </Link>
             </li>
             <li>
-              <Link href="/news/" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#" onClick={() => setIsMenuOpen(false)}>
                 <InViewWrapper animation="opin">
                   <span className="narw92">공지사항</span>
                   <span className="line"></span>

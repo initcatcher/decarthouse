@@ -24,7 +24,7 @@ export default function MedicalGuideSection() {
           viewport={{ once: true }}
         >
           <h2>
-            <span className="narw">외래진료</span>
+            <span className="narw">진료안내</span>
           </h2>
         </motion.div>
         <div className="one flex">
@@ -35,18 +35,13 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="/diabetes/">
+            <Link href="#">
               <h3>
-                <span className="narw">당뇨병</span>
+                <span className="narw">통합의학</span>
               </h3>
-              <p className="sub">1형 당뇨병 / 2형 당뇨병 / 당 대사 이상</p>
               <p className="exp">
-                당뇨병은 단순한 혈당 수치의 문제가 아닙니다. 그것은 우리 몸의
-                에너지 대사 시스템이 보내는 신호이며, 삶의 균형을 되찾아야
-                한다는 메시지입니다. 인슐린 주사나 약물치료는 물론,
-                식사·운동·수면 등의 생활 요소들을 통합적으로 관리하여 환자님만의
-                맞춤형 치료를 제공합니다. 관리 영양사와의 상담을 통해 음식과
-                몸의 조화를 찾습니다.
+              통합의학 카운슬링(Integrative Medicine Counseling)은
+              의학적 진단과 치료를 넘어, 환자의 심리사회적, 정서적, 생활환경적 요인을 통합적으로 탐색하여 보다 지속가능한 회복을 돕는 전문 상담 프로그램입니다.
               </p>
             </Link>
           </motion.section>
@@ -60,19 +55,13 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="/lifestyle-diseases/">
+            <Link href="#">
               <h3>
-                <span className="narw">생활습관병</span>
+                <span className="narw">사이먼튼테라피</span>
               </h3>
-              <p className="sub">생활습관병 통합 치료</p>
               <p className="exp">
-                생활습관병은 단순히 잘못된 식사나 운동 부족으로 생기는 병이
-                아닙니다. 그것은 삶의 방식 자체가 균형을 잃었음을, 존재의 리듬이
-                왜곡되었음을 우리 몸이 고통으로 알려오는 철학적 알림입니다.
-                생활습관병을 치유한다는 것은 단지 몸을 고치는 일이 아니라, 삶의
-                태도를 재구성하는 일입니다. 그것은 &apos;치료&apos;가 아닌,
-                &apos;회복&apos;이며, &apos;정복&apos;이 아닌,
-                &apos;조화&apos;입니다.
+              사이먼튼 테라피(Simonton Therapy)는 암을 비롯한 만성 질환 환자들의 심리적 회복력과 삶의 질 향상을 목적으로 개발된 심신의학 기반의 심리교육 및 상담 프로그램입니다.
+              1970년대 방사선종양학자 Carl Simonton 박사에 의해 시작된 이 치료는, “환자의 태도와 감정이 치료 결과에 실질적 영향을 미친다”는 통합적 관점에 뿌리를 두고 있습니다.
               </p>
             </Link>
           </motion.section>
@@ -88,17 +77,12 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="/thyroid/">
+            <Link href="#">
               <h3>
-                <span className="narw">내분비·갑상선</span>
+                <span className="narw">생활습관의학</span>
               </h3>
-              <p className="sub">
-                각종 갑상선 질환 / 갑상선 기능 이상에 의한 불임
-              </p>
               <p className="exp">
-                바세도우병 등의 갑상선 기능 항진증, 하시모토병 등의 갑상선 기능
-                저하증, 갑상선종대·종양 등의 전문진료를 실시하고 있습니다. 또한,
-                갑상선 호르몬의 이상이 관계하는 불임의 치료에도 힘쓰고 있습니다.
+              생활습관의학(Lifestyle Medicine)은 과학적 근거에 기반하여, 비약물적 치료를 통해 만성질환의 예방 치료를 추구하는 의학의 한 분야입니다. 제2형 당뇨병, 고혈압, 고지혈증, 심혈관질환, 비만, 일부 암, 우울증, 수면장애 등에 적용될 수 있습니다.
               </p>
             </Link>
           </motion.section>
@@ -112,20 +96,25 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="/sas/">
+            <Link href="#">
               <h3>
-                <span className="narw">수면무호흡증후군</span>
+                <span className="narw">앵거프리</span>
               </h3>
-              <p className="sub">코골이 / 기상시의 두통 / 야간각성</p>
               <p className="exp">
-                수면의 질을 검사하여, 중증도에 맞춘 치료를 실시합니다. 중등증
-                이상의 분에게는 원칙 CPAP치료를 실시하고, 빈맥, 고혈압, 2형
-                당뇨병, 동맥경화성의 합병증의 유무를 정기적으로 체크합니다.
+              앵거프리 21일 프로젝트는 ‘분노’라는 감정을 억제하지 않으면서 일상 속에서 심리적 유연성과 감정조절력을 키워나가는 자가 실천 프로그램입니다.
+              <br />
+              1) 21일간 매일 1개의 감정 과제
+              <br />
+              2) 고무밴드, 감정일기, 감각카드 등 도구 활용
+              <br />
+              3) 감정인식 → 반응멈춤 → 가치기반 선택 훈련
+              <br />
+              4) 수용전념치료(ACT) 이론에 기반합니다. 
               </p>
             </Link>
           </motion.section>
           <p className="btn sp">
-            <Link href="/sas/">자세히 보기</Link>
+            <Link href="#">자세히 보기</Link>
           </p>
         </div>
       </div>

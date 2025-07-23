@@ -60,7 +60,7 @@ export default function TopNavigation() {
             whileHover="hover"
           >
             <Link
-              href="/concept/"
+              href="#"
               style={{
                 padding: '4px 30px 5px',
                 display: 'block',
@@ -235,7 +235,7 @@ export default function TopNavigation() {
                 whileHover="hover"
               >
                 <Link
-                  href="/thyroid/"
+                  href="#"
                   style={{
                     padding: '4px 30px 5px',
                     display: 'block',
@@ -347,7 +347,7 @@ export default function TopNavigation() {
             whileHover="hover"
           >
             <Link
-              href="/doctors/"
+              href="#"
               style={{
                 padding: '4px 30px 5px',
                 display: 'block',
@@ -404,7 +404,7 @@ export default function TopNavigation() {
             whileHover="hover"
           >
             <Link
-              href="/news/"
+              href="#"
               style={{
                 padding: '4px 30px 5px',
                 display: 'block',
