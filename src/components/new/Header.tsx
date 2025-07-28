@@ -59,12 +59,12 @@ export default function Header() {
         </div>
         <div className="time-date">
           <p className="time">
-            진료시간 : <span className="en">9:30</span>～
-            <span className="en">13:00 / 14:30</span>～
-            <span className="en">18:30</span>
+            진료시간 : 주중 <span className="en">10:00</span>～
+            <span className="en">18:00</span> / 주말 <span className="en">10:00</span>～
+            <span className="en">15:00</span>
           </p>
           <p className="date">
-            진료일: 월～금 / 휴진일: 토일공휴일
+            진료일: 월～일
             <span className="completely">완전예약제</span>
           </p>
         </div>
@@ -166,18 +166,18 @@ export default function Header() {
           </ul>
           <p className="contact">예약 및 문의</p>
           <p className="num">
-            <Link href="tel:03-6274-6007">
-              <span className="en">03-6274-6007</span>
+            <Link href={`tel:${PHONE_NUMBER}`}>
+              <span className="en">{PHONE_NUMBER}</span>
             </Link>
           </p>
           <p className="completely">완전예약제</p>
           <p className="time">
             진료시간 : <br />
-            <span className="en">9:30</span>～
-            <span className="en">13:00 / 14:30</span>～
-            <span className="en">18:30</span>
+            주중 <span className="en">10:00</span>～
+            <span className="en">18:00</span> / 주말 <span className="en">10:00</span>～
+            <span className="en">15:00</span>
           </p>
-          <p className="date">진료일: 월～금 / 휴진일: 토일공휴일</p>
+          <p className="date">진료일: 월～일</p>
         </div>
       </div>
     </motion.header>

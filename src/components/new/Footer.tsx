@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import InViewWrapper from './InViewWrapper'
-import { PHONE_NUMBER } from './utils'
+import { PHONE_NUMBER, ADDRESS } from './utils'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -65,30 +65,30 @@ export default function Footer() {
                     <tr className="di">
                       <td>
                         <span className="jp">오전：</span>
-                        <span className="en">9:30</span>～
-                        <span className="en">13:00</span>
+                        <span className="en">10:00</span>～
+                        <span className="en">18:00</span>
                       </td>
                       <td>◯</td>
                       <td>◯</td>
                       <td>◯</td>
                       <td>◯</td>
                       <td>◯</td>
-                      <td>×</td>
-                      <td>×</td>
+                      <td>◯</td>
+                      <td>◯</td>
                     </tr>
                     <tr className="tres">
                       <td>
-                        <span className="jp">오후：</span>
-                        <span className="en">14:30</span>～
-                        <span className="en">18:30</span>
+                        <span className="jp">주말：</span>
+                        <span className="en">10:00</span>～
+                        <span className="en">15:00</span>
                       </td>
-                      <td>◯</td>
-                      <td>◯</td>
-                      <td>◯</td>
-                      <td>◯</td>
-                      <td>◯</td>
                       <td>×</td>
                       <td>×</td>
+                      <td>×</td>
+                      <td>×</td>
+                      <td>×</td>
+                      <td>◯</td>
+                      <td>◯</td>
                     </tr>
                   </tbody>
                 </table>
@@ -115,8 +115,7 @@ export default function Footer() {
             <div className="footer-map">
               <div className="address">
                 <p>
-                  〒104-0061 <br className="sp" />
-                  서울특별시 강남구 테헤란로 123 데카르트빌딩 5층
+{ADDRESS}
                 </p>
                 <p>지하철 2호선 「강남역」 6번출구에서 도보 5분</p>
               </div>
