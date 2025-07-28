@@ -68,7 +68,6 @@ export default function IntegrativeMedicine() {
           </motion.section>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

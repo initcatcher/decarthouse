@@ -65,7 +65,6 @@ export default function Header() {
           </p>
           <p className="date">
             진료일: 월～금 / 휴진일: 토일공휴일
-            <span className="completely">완전예약제</span>
           </p>
         </div>
       </div>
@@ -138,31 +137,6 @@ export default function Header() {
                 </InViewWrapper>
               </Link>
             </li>
-            <li>
-              <Link href="#" onClick={() => setIsMenuOpen(false)}>
-                <InViewWrapper animation="opin">
-                  <span className="narw92">공지사항</span>
-                  <span className="line"></span>
-                </InViewWrapper>
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={() => handleLinkClick('#access')}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  textAlign: 'left',
-                  width: '100%',
-                }}
-              >
-                <InViewWrapper animation="opin">
-                  <span className="narw92">오시는길</span>
-                  <span className="line"></span>
-                </InViewWrapper>
-              </button>
-            </li>
           </ul>
           <p className="contact">예약 및 문의</p>
           <p className="num">
@@ -174,7 +148,6 @@ export default function Header() {
               <span className="en">{PHONE_NUMBER_2}</span>
             </Link>
           </p>
-          <p className="completely">완전예약제</p>
           <p className="time">
             상담시간: <br />
             주중 <span className="en">오전10:00</span> ~ <span className="en">오후 6:00</span><br />

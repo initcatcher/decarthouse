@@ -58,7 +58,7 @@ export default function DoctorSection() {
             <br />
             <span>사이먼튼</span> 심리상담가, <span>통합의학 컨설턴트</span>, <span>&apos;앵거프리 프로젝트&apos;</span> 운영자로서 암과 싸우는 많은 환우들의 삶에 실제적인 도움을 주고 있습니다.
           </motion.div>
-          <motion.div
+          {/* <motion.div
             className="prof2"
             variants={fadeInUp}
             initial="hidden"
@@ -74,7 +74,7 @@ export default function DoctorSection() {
             <p>
               그 결과, 그는 진단 3년 만에 암을 자연적으로 관해시키며 스스로의 회복력을 입증했고, 현재는 암을 새로운 삶의 전환점으로 바라보는 통합의학적 시각을 바탕으로, 암 환우들에게 현실적인 길잡이이자 동반자가 되고자 제2의 삶을 살고 있습니다.
             </p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>

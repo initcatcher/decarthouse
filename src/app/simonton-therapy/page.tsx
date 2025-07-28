@@ -102,7 +102,6 @@ export default function SimontonTherapy() {
           </motion.section>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

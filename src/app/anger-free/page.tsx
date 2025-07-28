@@ -98,7 +98,6 @@ export default function AngerFree() {
           </motion.section>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

@@ -76,7 +76,6 @@ export default function LifestyleMedicine() {
           </motion.section>
         </div>
       </main>
-      <Footer />
     </>
   )
 }
