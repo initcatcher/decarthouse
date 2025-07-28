@@ -21,6 +21,10 @@ ol {
 }
 
 /* Set core root defaults */
+html {
+  font-size: 16px;
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
@@ -30,6 +34,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  font-size: 16px;
 }
 
 /* A elements that don't have a class get default styles */
@@ -630,13 +635,15 @@ header .sptel {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 9999;
-  width: 68%;
+  width: 100%;
   padding-top: 10%;
   padding-left: 16%;
   padding-right: 16%;
   padding-bottom: 16%;
-  height: auto;
+  height: 100vh;
   background: #fff;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
@@ -768,7 +775,7 @@ header .sptel {
 }
 
 .background {
-  background: url(/img/image.jpg) no-repeat center center;
+  background: url(/img/hero.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   z-index: -2;
@@ -784,6 +791,7 @@ header .sptel {
 @media (max-width: 768px) {
   .background {
     padding-bottom: 121%;
+    background-position: center right;
   }
 }
 
@@ -1715,14 +1723,10 @@ header .sptel {
 }
 
 .top_guide section a:hover {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {
   .top_guide section a:hover {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
   }
 }
 
@@ -1735,6 +1739,7 @@ header .sptel {
     background: #fff;
   }
 }
+
 
 .top_guide section a:hover::after {
   bottom: -15px;
@@ -1791,9 +1796,10 @@ header .sptel {
 
 @media (max-width: 1079px) {
   .top_doctor {
-    padding: 5% 0;
+    padding: 10% 4% 10%;
     margin-bottom: 10%;
     background-position: 28% 50%;
+    text-align: left;
   }
 }
 
@@ -1801,8 +1807,9 @@ header .sptel {
   .top_doctor {
     background: none;
     color: #000;
-    padding: 0;
+    padding: 10% 4% 8%;
     margin-bottom: 13%;
+    text-align: left;
   }
 }
 
@@ -1816,17 +1823,19 @@ header .sptel {
 
 @media (max-width: 1079px) {
   .top_doctor .wrap {
-    margin-left: auto;
+    margin-left: 0;
     display: block;
     max-width: 50%;
     margin-right: 0;
+    text-align: left;
   }
 }
 
 @media (max-width: 768px) {
   .top_doctor .wrap {
     max-width: none;
-    margin: 0 auto;
+    margin: 0;
+    text-align: left;
   }
 }
 
@@ -1861,7 +1870,9 @@ header .sptel {
     font-size: 25px;
     padding: 5% 5%;
     margin-right: 0;
+    margin-top: 60px;
     margin-bottom: 8%;
+    color: #ffffff;
   }
 }
 
@@ -1876,7 +1887,9 @@ header .sptel {
     padding: 0;
     margin-right: 0;
     text-align: left;
+    margin-top: 80px;
     margin-bottom: 12%;
+    color: #ffffff;
   }
 }
 
@@ -1920,6 +1933,7 @@ header .sptel {
   .top_doctor .prof h3 {
     font-size: 25px;
     margin-bottom: 6%;
+    color: #ffffff;
   }
 }
 
@@ -1928,6 +1942,7 @@ header .sptel {
     font-size: 27px;
     font-weight: 200;
     margin-bottom: 10%;
+    color: #ffffff;
   }
 }
 
@@ -1940,13 +1955,22 @@ header .sptel {
   margin-bottom: 28px;
 }
 
+@media (max-width: 1079px) {
+  .top_doctor .prof .prof1 {
+    color: #ffffff;
+    position: relative;
+    transform: translateX(-20px);
+  }
+}
+
 @media (max-width: 768px) {
   .top_doctor .prof .prof1 {
     font-size: 14px;
     line-height: 210%;
-    padding-left: 10%;
     position: relative;
     margin-bottom: 8%;
+    color: #ffffff;
+    transform: translateX(-15px);
   }
 }
 
@@ -1960,9 +1984,15 @@ header .sptel {
   background: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 1079px) {
+  .top_doctor .prof .prof1::before {
+    background: #ffffff;
+  }
+}
+
 @media (max-width: 768px) {
   .top_doctor .prof .prof1::before {
-    background: #a0a0a0;
+    background: #ffffff;
   }
 }
 
@@ -1972,11 +2002,21 @@ header .sptel {
   letter-spacing: 0.1em;
 }
 
+@media (max-width: 1079px) {
+  .top_doctor .prof .prof2 {
+    color: #ffffff;
+    position: relative;
+    transform: translateX(-20px);
+  }
+}
+
 @media (max-width: 768px) {
   .top_doctor .prof .prof2 {
     font-size: 15px;
     line-height: 190%;
     letter-spacing: 0.14em;
+    color: #ffffff;
+    position: relative;
   }
 }
 

@@ -60,7 +60,7 @@ export default function TopNavigation() {
             whileHover="hover"
           >
             <Link
-              href="#"
+              href="#concept"
               style={{
                 padding: '4px 30px 5px',
                 display: 'block',
@@ -125,7 +125,7 @@ export default function TopNavigation() {
                 whileHover="hover"
               >
                 <Link
-                  href="/diabetes/"
+                  href="/integrative-medicine/"
                   style={{
                     padding: '4px 30px 5px',
                     display: 'block',
@@ -137,7 +137,7 @@ export default function TopNavigation() {
                     className="narw92"
                     style={{ transform: 'translateY(-2px)' }}
                   >
-                    당뇨병
+                    통합의학
                   </span>
 
                   {/* Top border */}
@@ -180,7 +180,7 @@ export default function TopNavigation() {
                 whileHover="hover"
               >
                 <Link
-                  href="/lifestyle-diseases/"
+                  href="/simonton-therapy/"
                   style={{
                     padding: '4px 30px 5px',
                     display: 'block',
@@ -192,7 +192,7 @@ export default function TopNavigation() {
                     className="narw92"
                     style={{ transform: 'translateY(-2px)' }}
                   >
-                    생활습관병
+                    사이먼튼테라피
                   </span>
 
                   {/* Top border */}
@@ -235,7 +235,7 @@ export default function TopNavigation() {
                 whileHover="hover"
               >
                 <Link
-                  href="#"
+                  href="/lifestyle-medicine/"
                   style={{
                     padding: '4px 30px 5px',
                     display: 'block',
@@ -247,7 +247,7 @@ export default function TopNavigation() {
                     className="narw92"
                     style={{ transform: 'translateY(-2px)' }}
                   >
-                    내분비·갑상선
+                    생활습관의학
                   </span>
 
                   {/* Top border */}
@@ -290,7 +290,7 @@ export default function TopNavigation() {
                 whileHover="hover"
               >
                 <Link
-                  href="/sas/"
+                  href="/anger-free/"
                   style={{
                     padding: '4px 30px 5px',
                     display: 'block',
@@ -302,7 +302,7 @@ export default function TopNavigation() {
                     className="narw92"
                     style={{ transform: 'translateY(-2px)' }}
                   >
-                    수면무호흡증
+                    앵거프리
                   </span>
 
                   {/* Top border */}
@@ -347,7 +347,7 @@ export default function TopNavigation() {
             whileHover="hover"
           >
             <Link
-              href="#"
+              href="#doctor"
               style={{
                 padding: '4px 30px 5px',
                 display: 'block',
@@ -362,110 +362,6 @@ export default function TopNavigation() {
                 >
                   인물소개
                 </span>
-              </InViewWrapper>
-
-              {/* Top border */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                variants={borderVariants.top}
-                transition={{ duration: 0.3 }}
-              />
-
-              {/* Right border */}
-              <motion.div
-                className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                variants={borderVariants.right}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              />
-
-              {/* Bottom border */}
-              <motion.div
-                className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                variants={borderVariants.bottom}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              />
-
-              {/* Left border */}
-              <motion.div
-                className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                variants={borderVariants.left}
-                transition={{ duration: 0.3, delay: 0.3 }}
-              />
-            </Link>
-          </motion.div>
-        </motion.li>
-        <motion.li variants={fadeIn} style={{ listStyle: 'none' }}>
-          <motion.div
-            style={{
-              position: 'relative',
-              display: 'inline-block',
-            }}
-            initial="initial"
-            whileHover="hover"
-          >
-            <Link
-              href="#"
-              style={{
-                padding: '4px 30px 5px',
-                display: 'block',
-                position: 'relative',
-                textAlign: 'center',
-              }}
-            >
-              <InViewWrapper animation="opin">
-                <span className="narw92">공지사항</span>
-              </InViewWrapper>
-
-              {/* Top border */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                variants={borderVariants.top}
-                transition={{ duration: 0.3 }}
-              />
-
-              {/* Right border */}
-              <motion.div
-                className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                variants={borderVariants.right}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              />
-
-              {/* Bottom border */}
-              <motion.div
-                className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                variants={borderVariants.bottom}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              />
-
-              {/* Left border */}
-              <motion.div
-                className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                variants={borderVariants.left}
-                transition={{ duration: 0.3, delay: 0.3 }}
-              />
-            </Link>
-          </motion.div>
-        </motion.li>
-        <motion.li variants={fadeIn} style={{ listStyle: 'none' }}>
-          <motion.div
-            style={{
-              position: 'relative',
-              display: 'inline-block',
-            }}
-            initial="initial"
-            whileHover="hover"
-          >
-            <Link
-              href="#access"
-              style={{
-                padding: '4px 30px 5px',
-                display: 'block',
-                position: 'relative',
-                textAlign: 'center',
-              }}
-            >
-              <InViewWrapper animation="opin">
-                <span className="narw92">오시는길</span>
               </InViewWrapper>
 
               {/* Top border */}

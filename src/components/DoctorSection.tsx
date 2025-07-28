@@ -31,7 +31,7 @@ export default function DoctorSection() {
       </InViewWrapper> */}
       <div className="wrap flex">
         <h2>
-          <span className="narw">카운셀러 소개</span>
+          <span className="narw">카운슬러 소개</span>
         </h2>
         <motion.div
           className="prof"

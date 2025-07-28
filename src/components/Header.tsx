@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import InViewWrapper from './InViewWrapper'
-import { PHONE_NUMBER } from './utils'
+import { PHONE_NUMBER, PHONE_NUMBER_2 } from './utils'
 
 // Smooth scroll 함수
 const smoothScrollTo = (targetId: string) => {
@@ -106,25 +106,25 @@ export default function Header() {
               </span>
               <ul className="menu-child">
                 <li>
-                  <Link href="#" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/integrative-medicine/" onClick={() => setIsMenuOpen(false)}>
                     <span className="narw92">통합의학</span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    href="/simonton-therapy/"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="narw92">사이먼튼테라피</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#/" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/lifestyle-medicine/" onClick={() => setIsMenuOpen(false)}>
                     <span className="narw92">생활습관의학</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/anger-free/" onClick={() => setIsMenuOpen(false)}>
                     <span className="narw92">앵거 매니지먼트</span>
                   </Link>
                 </li>
@@ -166,18 +166,20 @@ export default function Header() {
           </ul>
           <p className="contact">예약 및 문의</p>
           <p className="num">
-            <Link href="tel:03-6274-6007">
-              <span className="en">03-6274-6007</span>
+            <Link href={`tel:${PHONE_NUMBER}`}>
+              <span className="en">{PHONE_NUMBER}</span>
+            </Link>
+            <br />
+            <Link href={`tel:${PHONE_NUMBER_2}`}>
+              <span className="en">{PHONE_NUMBER_2}</span>
             </Link>
           </p>
           <p className="completely">완전예약제</p>
           <p className="time">
-            진료시간 : <br />
-            <span className="en">9:30</span>～
-            <span className="en">13:00 / 14:30</span>～
-            <span className="en">18:30</span>
+            상담시간: <br />
+            주중 <span className="en">오전10:00</span> ~ <span className="en">오후 6:00</span><br />
+            주말 <span className="en">오전 10:00</span> ~ <span className="en">오후 3:00</span>
           </p>
-          <p className="date">진료일: 월～금 / 휴진일: 토일공휴일</p>
         </div>
       </div>
     </motion.header>

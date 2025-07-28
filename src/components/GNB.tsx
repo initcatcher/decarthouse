@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { PHONE_NUMBER } from './new/utils'
+import { PHONE_NUMBER } from './utils'
 
 const GNB = () => {
   const [menuOpen, setMenuOpen] = useState(false)

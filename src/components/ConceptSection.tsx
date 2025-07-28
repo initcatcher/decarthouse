@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import ReactSlider from './ReactSlider'
 import InViewWrapper from './InViewWrapper'
 
 const fadeInUp = {
@@ -14,21 +13,11 @@ const fadeInUp = {
   },
 }
 
-const concept1Images = [
-  { src: '/img/concept1_1.jpg', alt: '컨셉 이미지' },
-  { src: '/img/concept1_2.jpg', alt: '컨셉 이미지' },
-  { src: '/img/concept1_3.jpg', alt: '컨셉 이미지' },
-]
 
-const concept2Images = [
-  { src: '/img/concept2_1.jpg', alt: '컨셉 이미지' },
-  { src: '/img/concept2_2.jpg', alt: '컨셉 이미지' },
-  { src: '/img/concept2_3.jpg', alt: '컨셉 이미지' },
-]
 
 export default function ConceptSection() {
   return (
-    <section className="top_concept">
+    <section className="top_concept" id="concept">
       <div className="wrap1">
         <div className="one flex">
           <motion.div
@@ -65,13 +54,10 @@ export default function ConceptSection() {
             {/* <InViewWrapper animation="inv" className="cover">
               <div></div>
             </InViewWrapper> */}
-            <ReactSlider
-              images={concept1Images}
+            <img 
+              src="/img/concept1_1.jpg" 
+              alt="컨셉 이미지" 
               className="slider"
-              auto={true}
-              mode="fade"
-              speed={1000}
-              pause={2500}
             />
           </div>
         </div>
@@ -105,13 +91,10 @@ export default function ConceptSection() {
             {/* <InViewWrapper animation="inv" className="cover">
               <div></div>
             </InViewWrapper> */}
-            <ReactSlider
-              images={concept2Images}
+            <img 
+              src="/img/concept2_1.jpg" 
+              alt="컨셉 이미지" 
               className="slider"
-              auto={true}
-              mode="fade"
-              speed={1000}
-              pause={2500}
             />
           </div>
         </div>

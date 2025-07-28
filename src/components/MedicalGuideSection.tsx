@@ -35,7 +35,7 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="#">
+            <Link href="/integrative-medicine/">
               <h3>
                 <span className="narw">통합의학</span>
               </h3>
@@ -45,9 +45,6 @@ export default function MedicalGuideSection() {
               </p>
             </Link>
           </motion.section>
-          <p className="btn sp" style={{ marginBottom: '2.5em' }}>
-            <Link href="/diabetes/">자세히 보기</Link>
-          </p>
           <motion.section
             className="di inview"
             variants={fadeInUp}
@@ -55,19 +52,16 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="#">
+            <Link href="/simonton-therapy/">
               <h3>
                 <span className="narw">사이먼튼테라피</span>
               </h3>
               <p className="exp">
               사이먼튼 테라피(Simonton Therapy)는 암을 비롯한 만성 질환 환자들의 심리적 회복력과 삶의 질 향상을 목적으로 개발된 심신의학 기반의 심리교육 및 상담 프로그램입니다.
-              1970년대 방사선종양학자 Carl Simonton 박사에 의해 시작된 이 치료는, “환자의 태도와 감정이 치료 결과에 실질적 영향을 미친다”는 통합적 관점에 뿌리를 두고 있습니다.
+              1970년데 방사선종양학자 Carl Simonton 박사에 의해 시작된 이 치료는, "환자의 태도와 감정이 치료 결과에 실질적 영향을 미친다"는 통합적 관점에 뿌리를 두고 있습니다.
               </p>
             </Link>
           </motion.section>
-          <p className="btn sp" style={{ marginBottom: '2.5em' }}>
-            <Link href="/lifestyle-diseases/">자세히 보기</Link>
-          </p>
         </div>
         <div className="two flex">
           <motion.section
@@ -77,7 +71,7 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="#">
+            <Link href="/lifestyle-medicine/">
               <h3>
                 <span className="narw">생활습관의학</span>
               </h3>
@@ -86,9 +80,6 @@ export default function MedicalGuideSection() {
               </p>
             </Link>
           </motion.section>
-          <p className="btn sp" style={{ marginBottom: '2.5em' }}>
-            <Link href="/thyroid/">자세히 보기</Link>
-          </p>
           <motion.section
             className="tetra inview"
             variants={fadeInUp}
@@ -96,12 +87,12 @@ export default function MedicalGuideSection() {
             whileInView="show"
             viewport={{ once: true }}
           >
-            <Link href="#">
+            <Link href="/anger-free/">
               <h3>
                 <span className="narw">앵거프리</span>
               </h3>
               <p className="exp">
-              앵거프리 21일 프로젝트는 ‘분노’라는 감정을 억제하지 않으면서 일상 속에서 심리적 유연성과 감정조절력을 키워나가는 자가 실천 프로그램입니다.
+              앵거프리 21일 프로젝트는 '분노'라는 감정을 억제하지 않으면서 일상 속에서 심리적 유연성과 감정조절력을 키워나가는 자가 실천 프로그램입니다.
               <br />
               1) 21일간 매일 1개의 감정 과제
               <br />
@@ -113,9 +104,6 @@ export default function MedicalGuideSection() {
               </p>
             </Link>
           </motion.section>
-          <p className="btn sp">
-            <Link href="#">자세히 보기</Link>
-          </p>
         </div>
       </div>
     </section>

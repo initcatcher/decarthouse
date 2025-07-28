@@ -1,6 +1,5 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import Header from './Header'
 import Hero from './Hero'
 import TopNavigation from './TopNavigation'
@@ -11,12 +10,12 @@ import DoctorSection from './DoctorSection'
 import Footer from './Footer'
 
 // Splash screen component
-const SplashScreen = dynamic(() => import('./SplashScreen'), { ssr: false })
+// const SplashScreen = dynamic(() => import('./SplashScreen'), { ssr: false })
 
 export default function MainPage() {
   return (
     <>
-      <SplashScreen />
+      {/* <SplashScreen /> */}
       <div className="contents-cov">
         <Header />
         <Hero />
@@ -25,9 +24,11 @@ export default function MainPage() {
         <ConceptSection />
         <MedicalGuideSection />
         {/* <NewsSection /> */}
-        <DoctorSection />
+        <div id="doctor">
+          <DoctorSection />
+        </div>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   )

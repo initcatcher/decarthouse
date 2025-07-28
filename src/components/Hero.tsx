@@ -1,31 +1,37 @@
 'use client'
-import { Button } from '@/components/ui/button'
+
+import { motion } from 'framer-motion'
+// import Link from 'next/link'
+
+const fadeIn = {
+  hidden: { opacity: 0, scale: 1.035 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.5, delay: 0.1 },
+  },
+}
 
 export default function Hero() {
   return (
-    <div
-      className="relative w-full h-[500px] bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/Hero.jpg')" }} // 경로를 실제 이미지 경로로 수정
-    >
-      {/* 배경 오버레이 */}
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+    <>
+      {/* Mobile Contact Links */}
+      {/* <div className="splinks">
+        <p className="sptel">
+          <Link href="tel:03-6274-6007">전화하기</Link>
+        </p>
+      </div> */}
 
-      {/* 텍스트 콘텐츠 */}
-      <div className="relative z-10 flex items-center justify-center sm:justify-start h-full text-center sm:text-left px-4">
-        <div className="text-white">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl leading-snug">
-            내면의 <span className="text-red-400">가치</span>를 향한 여정
-            <br />
-            마음을 비워내는 <span className="text-red-400">치유</span>의 시간
-          </h1>
-          <p className="mt-4 text-sm sm:text-base">
-            당신의 마음을 편안하게 할 수 있는 시간
-          </p>
-          <Button className="mt-6 px-6 py-3 text-sm sm:text-base bg-white text-black font-medium rounded-md shadow-lg hover:bg-red-50 hover:text-red-600 transition-colors">
-            상담 예약하기
-          </Button>
-        </div>
+      {/* Main Hero Section */}
+      <div className="topmv">
+        <motion.div 
+          className="background"
+          variants={fadeIn}
+          initial="hidden"
+          animate="show"
+        >
+        </motion.div>
       </div>
-    </div>
+    </>
   )
 }
