@@ -5,9 +5,7 @@ import Hero from './Hero'
 import TopNavigation from './TopNavigation'
 import ConceptSection from './ConceptSection'
 import MedicalGuideSection from './MedicalGuideSection'
-import NewsSection from './NewsSection'
 import DoctorSection from './DoctorSection'
-import Footer from './Footer'
 
 // Splash screen component
 // const SplashScreen = dynamic(() => import('./SplashScreen'), { ssr: false })
