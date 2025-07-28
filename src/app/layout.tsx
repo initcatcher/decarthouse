@@ -25,6 +25,11 @@ const esamanru = localFont({
 export const metadata: Metadata = {
   title: '데카르트하우스',
   description: 'decarthouse counseling',
+  openGraph: {
+    title: '데카르트하우스',
+    description: 'decarthouse counseling',
+    images: ['/img/logo.png'],
+  },
 }
 
 export default function RootLayout({
