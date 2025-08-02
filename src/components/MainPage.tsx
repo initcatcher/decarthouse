@@ -14,7 +14,7 @@ export default function MainPage() {
   return (
     <>
       {/* <SplashScreen /> */}
-      <div className="contents-cov">
+      <div>
         <Header />
         <Hero />
         <TopNavigation />
