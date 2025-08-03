@@ -1,33 +1,23 @@
-'use client'
+"use client";
 
-import Header from './Header'
-import Hero from './Hero'
-import TopNavigation from './TopNavigation'
-import ConceptSection from './ConceptSection'
-import MedicalGuideSection from './MedicalGuideSection'
-import DoctorSection from './DoctorSection'
-
-// Splash screen component
-// const SplashScreen = dynamic(() => import('./SplashScreen'), { ssr: false })
+import Header from "./Header";
+import Hero from "./Hero";
+import TopNavigation from "./TopNavigation";
+import IntroduceSection from "./IntroduceSection";
+import CounselingSection from "./CounselingSection";
+import PersonSection from "./PersonSection";
 
 export default function MainPage() {
   return (
     <>
-      {/* <SplashScreen /> */}
-      <div>
-        <Header />
-        <Hero />
-        <TopNavigation />
-
-        <ConceptSection />
-        <MedicalGuideSection />
-        {/* <NewsSection /> */}
-        <div id="doctor">
-          <DoctorSection />
-        </div>
-
-        {/* <Footer /> */}
+      <Header />
+      <Hero />
+      <TopNavigation />
+      <div className="space-y-24">
+        <IntroduceSection />
+        <CounselingSection />
+        <PersonSection />
       </div>
     </>
-  )
+  );
 }

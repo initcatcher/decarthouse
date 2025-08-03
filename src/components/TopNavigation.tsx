@@ -1,400 +1,127 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import InViewWrapper from './InViewWrapper'
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
+// 메뉴 데이터 타입
+type NavItem = {
+  id: string;
+  title: string;
+  href: string;
+  children?: { title: string; href: string }[];
+};
+
+// 메뉴 데이터 상수
+const NAV_ITEMS: NavItem[] = [
+  {
+    id: "concept",
+    title: "컨셉",
+    href: "#concept",
+  },
+  {
+    id: "medical-guide",
+    title: "상담안내",
+    href: "#medical-guide",
+    children: [
+      { title: "통합의학", href: "/integrative-medicine/" },
+      { title: "사이먼튼테라피", href: "/simonton-therapy/" },
+      { title: "생활습관의학", href: "/lifestyle-medicine/" },
+      { title: "앵거프리", href: "/anger-free/" },
+    ],
+  },
+  {
+    id: "doctor",
+    title: "인물소개",
+    href: "#doctor",
+  },
+];
+
+// 애니메이션 variants
 const fadeIn = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
+    y: 0,
     transition: { duration: 0.6, delay: 0.1 },
   },
-}
+};
 
 const staggerContainer = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
     },
   },
-}
-
-// Border 애니메이션 variants
-const borderVariants = {
-  top: {
-    initial: { scaleX: 0, transformOrigin: 'left' },
-    hover: { scaleX: 1, transformOrigin: 'left' },
-  },
-  bottom: {
-    initial: { scaleX: 0, transformOrigin: 'right' },
-    hover: { scaleX: 1, transformOrigin: 'right' },
-  },
-  left: {
-    initial: { scaleY: 0, transformOrigin: 'bottom' },
-    hover: { scaleY: 1, transformOrigin: 'bottom' },
-  },
-  right: {
-    initial: { scaleY: 0, transformOrigin: 'top' },
-    hover: { scaleY: 1, transformOrigin: 'top' },
-  },
-}
+};
 
 export default function TopNavigation() {
+  // 재사용 가능한 NavItem 컴포넌트
+  const NavItemComponent = ({
+    item,
+    isChild = false,
+  }: {
+    item: Pick<NavItem, "title" | "href">;
+    isChild?: boolean;
+  }) => (
+    <div>
+      <Link
+        href={item.href}
+        className={`block px-6 py-3 text-center font-medium text-black transition-colors duration-200 hover:text-yellow-600 ${isChild ? "px-4 py-2 text-sm" : "md:px-8 md:py-4 md:text-lg"} `}
+      >
+        {item.title}
+      </Link>
+    </div>
+  );
+
   return (
-    <nav className="topnav">
-      <motion.ul
+    <nav className="hidden px-6 py-8 md:px-12 lg:block lg:px-16">
+      <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate="show"
-        style={{ listStyle: 'none', padding: 0, margin: 0 }}
+        className="flex flex-row items-center justify-center gap-8"
       >
-        <motion.li variants={fadeIn} style={{ listStyle: 'none' }}>
-          <motion.div
-            style={{
-              position: 'relative',
-              display: 'inline-block',
-            }}
-            initial="initial"
-            whileHover="hover"
-          >
-            <Link
-              href="#concept"
-              style={{
-                padding: '4px 30px 5px',
-                display: 'block',
-                position: 'relative',
-                textAlign: 'center',
-              }}
-            >
-              <span
-                className="narw92"
-                style={{ transform: 'translateY(-2px)' }}
-              >
-                컨셉
-              </span>
+        {NAV_ITEMS.map((item, index) => (
+          <React.Fragment key={item.id}>
+            <motion.div variants={fadeIn} className="relative">
+              {item.children ? (
+                // 드롭다운이 있는 메뉴
+                <div className="group">
+                  <div className="cursor-pointer px-6 py-3 text-center font-medium text-black transition-colors duration-200 hover:text-yellow-600 md:px-8 md:py-4 md:text-lg">
+                    {item.title}
+                  </div>
 
-              {/* Top border */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                variants={borderVariants.top}
-                transition={{ duration: 0.3 }}
-              />
+                  {/* 드롭다운 메뉴 */}
+                  <div className="invisible absolute top-full left-0 z-10 mt-2 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
+                    <div className="min-w-[200px] rounded-lg border border-gray-200 bg-white p-2 shadow-lg">
+                      {item.children.map((child, childIndex) => (
+                        <div key={childIndex} className="mb-1 last:mb-0">
+                          <Link
+                            href={child.href}
+                            className="block rounded-md px-4 py-2 font-medium text-black transition-colors duration-200 hover:text-yellow-600"
+                          >
+                            {child.title}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                // 일반 메뉴
+                <NavItemComponent item={item} />
+              )}
+            </motion.div>
 
-              {/* Right border */}
-              <motion.div
-                className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                variants={borderVariants.right}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              />
-
-              {/* Bottom border */}
-              <motion.div
-                className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                variants={borderVariants.bottom}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              />
-
-              {/* Left border */}
-              <motion.div
-                className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                variants={borderVariants.left}
-                transition={{ duration: 0.3, delay: 0.3 }}
-              />
-            </Link>
-          </motion.div>
-        </motion.li>
-        <motion.li variants={fadeIn} style={{ listStyle: 'none' }}>
-          <span className="menues">
-            <span className="narw92" style={{ transform: 'translateY(-2px)' }}>
-              진료안내
-            </span>
-          </span>
-          <ul
-            className="menu-child"
-            style={{ listStyle: 'none', padding: 0, margin: 0 }}
-          >
-            <motion.li style={{ listStyle: 'none' }}>
-              <motion.div
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-                initial="initial"
-                whileHover="hover"
-              >
-                <Link
-                  href="/integrative-medicine/"
-                  style={{
-                    padding: '4px 30px 5px',
-                    display: 'block',
-                    position: 'relative',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    className="narw92"
-                    style={{ transform: 'translateY(-2px)' }}
-                  >
-                    통합의학
-                  </span>
-
-                  {/* Top border */}
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.top}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Right border */}
-                  <motion.div
-                    className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.right}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  />
-
-                  {/* Bottom border */}
-                  <motion.div
-                    className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.bottom}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  />
-
-                  {/* Left border */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.left}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  />
-                </Link>
-              </motion.div>
-            </motion.li>
-            <motion.li style={{ listStyle: 'none' }}>
-              <motion.div
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-                initial="initial"
-                whileHover="hover"
-              >
-                <Link
-                  href="/simonton-therapy/"
-                  style={{
-                    padding: '4px 30px 5px',
-                    display: 'block',
-                    position: 'relative',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    className="narw92"
-                    style={{ transform: 'translateY(-2px)' }}
-                  >
-                    사이먼튼테라피
-                  </span>
-
-                  {/* Top border */}
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.top}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Right border */}
-                  <motion.div
-                    className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.right}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  />
-
-                  {/* Bottom border */}
-                  <motion.div
-                    className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.bottom}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  />
-
-                  {/* Left border */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.left}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  />
-                </Link>
-              </motion.div>
-            </motion.li>
-            <motion.li style={{ listStyle: 'none' }}>
-              <motion.div
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-                initial="initial"
-                whileHover="hover"
-              >
-                <Link
-                  href="/lifestyle-medicine/"
-                  style={{
-                    padding: '4px 30px 5px',
-                    display: 'block',
-                    position: 'relative',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    className="narw92"
-                    style={{ transform: 'translateY(-2px)' }}
-                  >
-                    생활습관의학
-                  </span>
-
-                  {/* Top border */}
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.top}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Right border */}
-                  <motion.div
-                    className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.right}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  />
-
-                  {/* Bottom border */}
-                  <motion.div
-                    className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.bottom}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  />
-
-                  {/* Left border */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.left}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  />
-                </Link>
-              </motion.div>
-            </motion.li>
-            <motion.li style={{ listStyle: 'none' }}>
-              <motion.div
-                style={{
-                  position: 'relative',
-                  display: 'inline-block',
-                }}
-                initial="initial"
-                whileHover="hover"
-              >
-                <Link
-                  href="/anger-free/"
-                  style={{
-                    padding: '4px 30px 5px',
-                    display: 'block',
-                    position: 'relative',
-                    textAlign: 'center',
-                  }}
-                >
-                  <span
-                    className="narw92"
-                    style={{ transform: 'translateY(-2px)' }}
-                  >
-                    앵거프리
-                  </span>
-
-                  {/* Top border */}
-                  <motion.div
-                    className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.top}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Right border */}
-                  <motion.div
-                    className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.right}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  />
-
-                  {/* Bottom border */}
-                  <motion.div
-                    className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                    variants={borderVariants.bottom}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                  />
-
-                  {/* Left border */}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                    variants={borderVariants.left}
-                    transition={{ duration: 0.3, delay: 0.3 }}
-                  />
-                </Link>
-              </motion.div>
-            </motion.li>
-          </ul>
-        </motion.li>
-        <motion.li variants={fadeIn} style={{ listStyle: 'none' }}>
-          <motion.div
-            style={{
-              position: 'relative',
-              display: 'inline-block',
-            }}
-            initial="initial"
-            whileHover="hover"
-          >
-            <Link
-              href="#doctor"
-              style={{
-                padding: '4px 30px 5px',
-                display: 'block',
-                position: 'relative',
-                textAlign: 'center',
-              }}
-            >
-              <InViewWrapper animation="opin">
-                <span
-                  className="narw92"
-                  style={{ transform: 'translateY(-2px)' }}
-                >
-                  인물소개
-                </span>
-              </InViewWrapper>
-
-              {/* Top border */}
-              <motion.div
-                className="absolute top-0 left-0 w-full h-0.5 bg-current"
-                variants={borderVariants.top}
-                transition={{ duration: 0.3 }}
-              />
-
-              {/* Right border */}
-              <motion.div
-                className="absolute top-0 right-0 w-0.5 h-full bg-current"
-                variants={borderVariants.right}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              />
-
-              {/* Bottom border */}
-              <motion.div
-                className="absolute bottom-0 right-0 w-full h-0.5 bg-current"
-                variants={borderVariants.bottom}
-                transition={{ duration: 0.3, delay: 0.2 }}
-              />
-
-              {/* Left border */}
-              <motion.div
-                className="absolute bottom-0 left-0 w-0.5 h-full bg-current"
-                variants={borderVariants.left}
-                transition={{ duration: 0.3, delay: 0.3 }}
-              />
-            </Link>
-          </motion.div>
-        </motion.li>
-      </motion.ul>
+            {/* Separator */}
+            {index < NAV_ITEMS.length - 1 && (
+              <div className="h-6 w-px bg-gray-300"></div>
+            )}
+          </React.Fragment>
+        ))}
+      </motion.div>
     </nav>
-  )
+  );
 }

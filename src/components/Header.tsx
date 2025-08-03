@@ -1,21 +1,43 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import InViewWrapper from './InViewWrapper';
-import { ADDRESS, PHONE_NUMBER, PHONE_NUMBER_2 } from './utils';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ADDRESS, PHONE_NUMBER, PHONE_NUMBER_2 } from "./utils";
+import Image from "next/image";
+import { LOGO } from "@/const";
 
-// Smooth scroll 함수
-const smoothScrollTo = (targetId: string) => {
-  const element = document.getElementById(targetId.replace('#', ''));
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  }
+// 메뉴 데이터 상수
+type MenuItem = {
+  id: string;
+  title: string;
+  href: string;
+  children?: { title: string; href: string }[];
 };
+
+const MENU_ITEMS: MenuItem[] = [
+  {
+    id: "concept",
+    title: "컨셉",
+    href: "#",
+  },
+  {
+    id: "medical-guide",
+    title: "진료안내",
+    href: "#",
+    children: [
+      { title: "통합의학", href: "/integrative-medicine/" },
+      { title: "사이먼튼테라피", href: "/simonton-therapy/" },
+      { title: "생활습관의학", href: "/lifestyle-medicine/" },
+      { title: "앵거 매니지먼트", href: "/anger-free/" },
+    ],
+  },
+  {
+    id: "introduction",
+    title: "인물소개",
+    href: "#",
+  },
+];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,152 +46,182 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = (href: string) => {
-    if (href.startsWith('#')) {
-      smoothScrollTo(href);
-    }
-    setIsMenuOpen(false); // 메뉴 닫기
+  // 스타일 상수들
+  const HEADER_STYLES = {
+    container: "flex w-full items-center px-4 py-6 md:px-10",
+    logo: "h-[52px] object-contain",
+    hamburgerButton:
+      "flex h-8 w-8 flex-col items-center justify-center space-y-1",
+    hamburgerLine: "block h-0.5 w-6 bg-black transition-transform",
+    mobileOverlay: "fixed inset-0 z-50 bg-white lg:hidden",
+    mobileContent: "flex h-full flex-col overflow-y-auto p-4",
+    menuItem:
+      "text-lg font-medium text-gray-900 hover:text-gray-600 block py-2",
+    subMenuItem: "text-gray-600 hover:text-gray-900 block py-1",
   };
+
+  // 공통 컴포넌트들
+  const LogoComponent = ({ onClick }: { onClick?: () => void }) => (
+    <Link href={"/"} onClick={onClick}>
+      <Image
+        src={LOGO}
+        width={100}
+        height={52}
+        alt="logo"
+        className={HEADER_STYLES.logo}
+      />
+    </Link>
+  );
+
+  const HamburgerButton = ({ isOpen }: { isOpen: boolean }) => (
+    <button
+      onClick={handleMenuToggle}
+      className={HEADER_STYLES.hamburgerButton}
+      aria-label="메뉴 토글"
+    >
+      <span
+        className={`${HEADER_STYLES.hamburgerLine} ${
+          isOpen ? "translate-y-1.5 rotate-45" : ""
+        }`}
+      ></span>
+      <span
+        className={`${HEADER_STYLES.hamburgerLine} transition-opacity ${
+          isOpen ? "opacity-0" : ""
+        }`}
+      ></span>
+      <span
+        className={`${HEADER_STYLES.hamburgerLine} ${
+          isOpen ? "-translate-y-1.5 -rotate-45" : ""
+        }`}
+      ></span>
+    </button>
+  );
 
   return (
     <motion.header
-      initial={{ visibility: 'hidden' }}
-      animate={{ visibility: 'visible' }}
+      initial={{ visibility: "hidden" }}
+      animate={{ visibility: "visible" }}
       transition={{ delay: 0.5 }}
+      className="relative"
     >
-      <h1 className='logo'>
-        <Link href='/'>
-          <img
-            src='/img/logo.png'
-            alt='데카르트하우스 클리닉'
-            width={282}
-            height={50}
-          />
-        </Link>
-      </h1>
-
-      <div className='infos'>
-        <div className='tel flex flex-col'>
-          <div className='phone'>
-            <span className='contact'>예약 및 문의</span>
-            <span className='num'>
-              <Link href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</Link>
-            </span>
-          </div>
-          <div className='phone'>
-            <span className='contact'>위치</span>
-            <span className='num'>{ADDRESS}</span>
-          </div>
+      <div className={HEADER_STYLES.container}>
+        <div className="flex flex-1">
+          <LogoComponent />
         </div>
 
-        <div className='time-date'>
-          <p className='time'>
-            진료시간 : <span className='en'>9:30</span>～
-            <span className='en'>13:00 / 14:30</span>～
-            <span className='en'>18:30</span>
-          </p>
-          <p className='date'>진료일: 월～금 / 휴진일: 토일공휴일</p>
+        {/* 햄버거 메뉴 - lg 이하에서만 표시 */}
+        <div className="lg:hidden">
+          <HamburgerButton isOpen={isMenuOpen} />
         </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <div id='nav-humbg'>
-        <input
-          className='nav-unshown'
-          id='nav-input'
-          type='checkbox'
-          checked={isMenuOpen}
-          onChange={handleMenuToggle}
-        />
-        <label id='nav-open' htmlFor='nav-input'>
-          <span></span>
-        </label>
-        <label
-          className='nav-unshown'
-          id='nav-close'
-          htmlFor='nav-input'
-        ></label>
-        <div id='nav-content'>
-          <ul>
-            <li>
-              <Link href='#' onClick={() => setIsMenuOpen(false)}>
-                <InViewWrapper animation='opin'>
-                  <span className='narw92'>컨셉</span>
-                  <span className='line'></span>
-                </InViewWrapper>
-              </Link>
-            </li>
-            <li>
-              <span className='menues'>
-                <InViewWrapper animation='opin'>
-                  <span className='narw92'>진료안내</span>
-                  <span className='line'></span>
-                </InViewWrapper>
+        <div className="hidden gap-4 lg:flex">
+          <div>
+            <div className="">
+              <span className="">예약 및 문의</span>
+              <span className="">
+                <Link href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</Link>
               </span>
-              <ul className='menu-child'>
-                <li>
-                  <Link
-                    href='/integrative-medicine/'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className='narw92'>통합의학</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/simonton-therapy/'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className='narw92'>사이먼튼테라피</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/lifestyle-medicine/'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className='narw92'>생활습관의학</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href='/anger-free/'
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className='narw92'>앵거 매니지먼트</span>
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link href='#' onClick={() => setIsMenuOpen(false)}>
-                <InViewWrapper animation='opin'>
-                  <span className='narw92'>인물소개</span>
-                  <span className='line'></span>
-                </InViewWrapper>
-              </Link>
-            </li>
-          </ul>
-          <p className='contact'>예약 및 문의</p>
-          <p className='num'>
-            <Link href={`tel:${PHONE_NUMBER}`}>
-              <span className='en'>{PHONE_NUMBER}</span>
-            </Link>
-            <br />
-            <Link href={`tel:${PHONE_NUMBER_2}`}>
-              <span className='en'>{PHONE_NUMBER_2}</span>
-            </Link>
-          </p>
-          <p className='time'>
-            상담시간: <br />
-            주중 <span className='en'>오전10:00</span> ~{' '}
-            <span className='en'>오후 6:00</span>
-            <br />
-            주말 <span className='en'>오전 10:00</span> ~{' '}
-            <span className='en'>오후 3:00</span>
-          </p>
+            </div>
+            <div>
+              <span className="contact">위치</span>
+              <span className="num">{ADDRESS}</span>
+            </div>
+          </div>
+          <div>
+            <div>
+              <span>상담시간</span>
+              <span className="en">9:30</span>～
+              <span className="en">13:00 / 14:30</span>～
+              <span className="en">18:30</span>
+            </div>
+            <div>
+              <span>상담일: </span>
+              <span>진료일: 월～금 / 휴진일: 토일공휴일</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* 모바일 메뉴 - 전체 화면 오버레이 */}
+      {isMenuOpen && (
+        <div
+          className={HEADER_STYLES.mobileOverlay}
+          role="dialog"
+          aria-modal="true"
+          aria-label="모바일 메뉴"
+        >
+          {/* 모바일 메뉴 헤더 */}
+          <div className="flex w-full items-center justify-between px-4 py-6 md:px-10">
+            <LogoComponent onClick={() => setIsMenuOpen(false)} />
+            <HamburgerButton isOpen={true} />
+          </div>
+
+          {/* 모바일 메뉴 컨텐츠 */}
+          <div className={HEADER_STYLES.mobileContent}>
+            <nav role="navigation" aria-label="메인 네비게이션">
+              <ul className="space-y-4">
+                {MENU_ITEMS.map((item) => (
+                  <li key={item.id}>
+                    {item.children ? (
+                      <div>
+                        <div className="mb-2 text-lg font-medium text-gray-900">
+                          {item.title}
+                        </div>
+                        <ul className="ml-4 space-y-2">
+                          {item.children.map((child, index) => (
+                            <li key={index}>
+                              <Link
+                                href={child.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={HEADER_STYLES.subMenuItem}
+                              >
+                                {child.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={HEADER_STYLES.menuItem}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+              {/* 연락처 정보 */}
+              <div className="mt-8 border-t border-gray-200 pt-8">
+                <p className="mb-2 text-lg font-medium text-gray-900">
+                  예약 및 문의
+                </p>
+                <div className="mb-4 space-y-1">
+                  <Link
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="block text-lg text-blue-600"
+                  >
+                    {PHONE_NUMBER}
+                  </Link>
+                  <Link
+                    href={`tel:${PHONE_NUMBER_2}`}
+                    className="block text-lg text-blue-600"
+                  >
+                    {PHONE_NUMBER_2}
+                  </Link>
+                </div>
+                <div className="text-gray-600">
+                  <p className="mb-1">상담시간:</p>
+                  <p>주중 오전10:00 ~ 오후 6:00</p>
+                  <p>주말 오전 10:00 ~ 오후 3:00</p>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      )}
     </motion.header>
   );
 }
