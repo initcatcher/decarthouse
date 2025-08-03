@@ -2290,14 +2290,14 @@ footer .thr .copy {
   }
 }
 
-.contents.pages::before,
+/* .contents.pages::before,
 .contents.pages::after {
   content: "";
   background: #a0a0a0;
   position: absolute;
   height: 1px;
   width: 100%;
-}
+} */
 
 @media (max-width: 768px) {
   .contents.pages::before,

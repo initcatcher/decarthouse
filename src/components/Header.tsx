@@ -48,7 +48,8 @@ export default function Header() {
 
   // 스타일 상수들
   const HEADER_STYLES = {
-    container: "flex w-full items-center px-4 py-6 md:px-10",
+    container:
+      "flex w-full items-center px-4 py-6 md:px-10 mx-auto w-full max-w-7xl",
     logo: "h-[52px] object-contain",
     hamburgerButton:
       "flex h-8 w-8 flex-col items-center justify-center space-y-1",

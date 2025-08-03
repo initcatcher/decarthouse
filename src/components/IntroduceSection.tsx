@@ -34,38 +34,41 @@ const staggerContainer = {
 
 // 글자가 써지듯이 나타나는 애니메이션
 const typewriter = {
-  hidden: { 
+  hidden: {
     opacity: 0,
-    clipPath: "inset(0 100% 0 0)"
+    clipPath: "inset(0 100% 0 0)",
   },
   visible: {
     opacity: 1,
     clipPath: "inset(0 0% 0 0)",
-    transition: { 
-      duration: 1.2
-    }
-  }
+    transition: {
+      duration: 1.2,
+    },
+  },
 };
 
 const textReveal = {
-  hidden: { 
-    opacity: 0, 
+  hidden: {
+    opacity: 0,
     y: 10,
-    clipPath: "inset(0 0 100% 0)"
+    clipPath: "inset(0 0 100% 0)",
   },
   visible: {
     opacity: 1,
     y: 0,
     clipPath: "inset(0 0 0% 0)",
-    transition: { 
-      duration: 0.8
-    }
-  }
+    transition: {
+      duration: 0.8,
+    },
+  },
 };
 
 export default function IntroduceSection() {
   return (
-    <div className="mx-auto w-full max-w-7xl space-y-20 px-4 pt-10 text-left md:px-10 lg:px-0">
+    <div
+      className="mx-auto w-full max-w-7xl space-y-20 px-4 pt-10 text-left md:px-10 lg:px-0"
+      id="concept"
+    >
       {/* 첫 번째 섹션 */}
       <motion.section
         className="flex flex-col gap-10 lg:flex-row lg:gap-20"
@@ -78,10 +81,16 @@ export default function IntroduceSection() {
             className="pb-4 text-2xl leading-relaxed font-medium md:text-3xl"
             variants={staggerContainer}
           >
-            <motion.span className="block overflow-hidden" variants={typewriter}>
+            <motion.span
+              className="block overflow-hidden"
+              variants={typewriter}
+            >
               사이먼튼 심리치료
             </motion.span>
-            <motion.span className="block overflow-hidden" variants={typewriter}>
+            <motion.span
+              className="block overflow-hidden"
+              variants={typewriter}
+            >
               새로운 관점으로 암을 바라보다
             </motion.span>
           </motion.h2>

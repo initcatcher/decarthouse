@@ -1,17 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: 0.1 },
-  },
-};
 
 export default function SimontonTherapy() {
   return (
@@ -19,22 +9,9 @@ export default function SimontonTherapy() {
       <Header />
       <main className="mx-auto w-full max-w-5xl px-4">
         <div className="pages contents">
-          <motion.h1
-            className="inview"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            사이먼튼테라피
-          </motion.h1>
+          <h1>사이먼튼테라피</h1>
 
-          <motion.section
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
+          <section>
             <p>
               사이먼튼 테라피(Simonton Therapy)는 암을 비롯한 만성 질환 환자들의
               심리적 회복력과 삶의 질 향상을 목적으로 개발된 심신의학 기반의
@@ -52,14 +29,9 @@ export default function SimontonTherapy() {
               향상과 삶의 질 개선을 위한 실천적 접근으로 전 세계 암 센터와
               통합의학기관에서 널리 활용되고 있습니다.
             </p>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
+          <section>
             <h2>주요 구성 요소</h2>
             <br />
             <p>
@@ -81,14 +53,9 @@ export default function SimontonTherapy() {
               <strong>행동 변화 촉진</strong>
             </p>
             <p>건강한 생활습관과 심리적 지지체계 구축</p>
-          </motion.section>
+          </section>
 
-          <motion.section
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
+          <section>
             <h2>사이먼튼 테라피의 새로운 관점</h2>
             <br />
             <p>
@@ -121,7 +88,7 @@ export default function SimontonTherapy() {
               환자의 마음 상태, 삶에 대한 태도, 관계 속에서의 지지 경험과 같은
               비물질적인 요소에서 결정된다고 보았습니다.
             </p>
-          </motion.section>
+          </section>
         </div>
       </main>
     </>

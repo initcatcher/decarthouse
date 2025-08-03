@@ -21,7 +21,7 @@ export default function Hero() {
       {/* <div className="absolute inset-0 bg-black/30" /> */}
 
       {/* 콘텐츠 */}
-      <div className="relative flex h-full flex-col justify-center">
+      <div className="relative mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
         <div className="px-6 md:px-12 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -29,11 +29,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <h1 className="text-3xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
               내면의 <span className="text-yellow-300">가치</span>를 향한 여정
             </h1>
 
-            <h2 className="text-2xl font-bold text-white md:text-5xl lg:text-6xl">
+            <h2 className="text-2xl font-bold text-white md:text-4xl lg:text-5xl">
               마음을 비워내는
               <span className="text-yellow-300">치유</span>의 시간
             </h2>
@@ -42,7 +42,7 @@ export default function Hero() {
                 href={`tel:${PHONE_NUMBER}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-full bg-white/80 px-8 py-4 text-center text-xl font-semibold text-gray-900 backdrop-blur-sm transition-all duration-200 hover:bg-white/90 hover:shadow-lg md:px-12 md:py-5 md:text-2xl lg:px-16 lg:py-6 lg:text-2xl"
+                className="rounded-full bg-white/80 px-8 py-4 text-center text-xl font-semibold text-gray-900 backdrop-blur-sm transition-all duration-200 hover:bg-white/90 hover:shadow-lg md:px-12 md:py-5 md:text-lg lg:text-xl"
               >
                 상담 예약하기
               </motion.a>

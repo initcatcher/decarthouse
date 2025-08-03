@@ -31,9 +31,9 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
-    id: "doctor",
+    id: "introduction",
     title: "인물소개",
-    href: "#doctor",
+    href: "#introduction",
   },
 ];
 

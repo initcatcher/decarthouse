@@ -63,6 +63,7 @@ export default function PersonSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
+        id="introduction"
       >
         <motion.section className="text-left" variants={staggerContainer}>
           <motion.h1
@@ -73,7 +74,7 @@ export default function PersonSection() {
           </motion.h1>
 
           <motion.div
-            className="relative mb-4 h-[240px] overflow-hidden"
+            className="relative mb-4 h-[300px] overflow-hidden"
             variants={fadeInUp}
           >
             <motion.div
@@ -87,7 +88,7 @@ export default function PersonSection() {
                 src={SECTION3_1}
                 fill
                 alt="토마스 프로필"
-                className="object-contain"
+                className="object-cover"
               />
             </motion.div>
           </motion.div>
@@ -143,7 +144,7 @@ export default function PersonSection() {
           <div className="absolute inset-0 bg-black/20" />
 
           <motion.div
-            className="absolute inset-0 z-20 flex flex-col items-start p-10 text-left text-white"
+            className="absolute inset-0 z-20 mx-auto flex w-full max-w-7xl flex-col items-start px-10 pt-10 text-left text-white lg:px-0"
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp}>
