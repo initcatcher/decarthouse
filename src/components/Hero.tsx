@@ -27,15 +27,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <h1 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+            <h1 className="text-2xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
               내면의 <span className="text-yellow-300">가치</span>를 향한 여정
             </h1>
 
             <h2 className="text-2xl font-bold text-white md:text-4xl lg:text-5xl">
               마음을 비워내는
               <span className="text-yellow-300">치유</span>의 시간
+            </h2>
+            <h2 className="pt-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+              내면의 들판 연구소
             </h2>
             <div className="flex flex-col gap-4 pt-6 sm:flex-row">
               <motion.a

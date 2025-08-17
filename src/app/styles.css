@@ -2290,30 +2290,22 @@ footer .thr .copy {
   }
 }
 
-/* .contents.pages::before,
-.contents.pages::after {
-  content: "";
-  background: #a0a0a0;
-  position: absolute;
-  height: 1px;
-  width: 100%;
-} */
 
 @media (max-width: 768px) {
-  .contents.pages::before,
-  .contents.pages::after {
-    width: 80%;
+  .contents.pages section::before,
+  .contents.pages section::after,
+  .contents.pages section *::before,
+  .contents.pages section *::after {
+    display: none !important;
+  }
+  
+  .contents.pages section {
+    border: none !important;
   }
 }
 
 .contents.pages::before {
   bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .contents.pages::before {
-    bottom: 0.2%;
-  }
 }
 
 .contents.pages::after {
@@ -2463,11 +2455,6 @@ footer .thr .copy {
   left: 0;
 }
 
-@media (max-width: 768px) {
-  .contents.pages h2::after {
-    display: none;
-  }
-}
 
 .contents.pages p {
   font-size: 14px;

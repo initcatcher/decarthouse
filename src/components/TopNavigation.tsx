@@ -16,7 +16,7 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   {
     id: "concept",
-    title: "컨셉",
+    title: "컨셉 소개",
     href: "#concept",
   },
   {

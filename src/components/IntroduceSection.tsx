@@ -81,12 +81,12 @@ export default function IntroduceSection() {
             className="pb-4 text-2xl leading-relaxed font-medium md:text-3xl"
             variants={staggerContainer}
           >
-            <motion.span
+            {/* <motion.span
               className="block overflow-hidden"
               variants={typewriter}
             >
               사이먼튼 심리치료
-            </motion.span>
+            </motion.span> */}
             <motion.span
               className="block overflow-hidden"
               variants={typewriter}
