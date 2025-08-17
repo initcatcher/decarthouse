@@ -7,12 +7,18 @@ import { HERO } from "@/const";
 
 export default function Hero() {
   return (
-    <div className="relative h-[calc(100svh-100px)] overflow-hidden md:h-[700px] lg:h-[800px]">
+    <div 
+      className="relative h-[calc(100svh-100px)] overflow-hidden md:h-[700px] lg:h-[800px]"
+      style={{
+        "--object-position": "80% 50%",
+        "--object-position-md": "50% 50%",
+      } as React.CSSProperties}
+    >
       {/* 배경 이미지 */}
       <Image
         src={HERO}
         fill
-        className="object-cover"
+        className="object-cover [object-position:var(--object-position)] md:[object-position:var(--object-position-md)]"
         alt="치유와 상담을 위한 공간"
         priority
       />

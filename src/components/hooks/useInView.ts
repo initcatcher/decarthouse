@@ -15,7 +15,7 @@ export function useInView(options: UseInViewOptions = {}) {
 
   useEffect(() => {
     const element = ref.current
-    if (!element) return
+    if (!element || typeof window === 'undefined') return
 
     // 이미 트리거되었고 triggerOnce가 true면 리턴
     if (hasTriggered && triggerOnce) return
