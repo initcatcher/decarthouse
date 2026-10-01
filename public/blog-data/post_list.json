@@ -1,67 +1,13 @@
 {
-  "lastUpdated": "2026-09-15T18:42:27.044949",
+  "lastUpdated": "2026-10-01T20:06:05.250344",
   "blogId": "tomas0124",
   "totalPosts": 20,
   "posts": [
     {
-      "title": "앵거프리+밴드는+왜+만들어졌을까요?",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224410259459",
-      "date": "2026. 9. 1",
-      "logNo": "224410259459"
-    },
-    {
-      "title": "위빠사나",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224409265119",
-      "date": "2026. 9. 1",
-      "logNo": "224409265119"
-    },
-    {
-      "title": "완전관해의+희망을+직접경함할수있었던+북토크+현장",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224406362916",
-      "date": "2026. 9. 9",
-      "logNo": "224406362916"
-    },
-    {
-      "title": "암환자에게++이완과+명상이+굉장히+중요한+이유",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224397578155",
-      "date": "2026. 9. 1",
-      "logNo": "224397578155"
-    },
-    {
-      "title": "아르니카(Arnica)와+‘다쳤지만+다치지+않은+척하는+마음’",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224396281241",
-      "date": "2026. 8. 3",
-      "logNo": "224396281241"
-    },
-    {
-      "title": "사이먼튼+테라피+특별+세미나+오픈",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224393480495",
-      "date": "2026. 8. 2",
-      "logNo": "224393480495"
-    },
-    {
-      "title": "구강+효소",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224393295116",
-      "date": "2026. 8. 2",
-      "logNo": "224393295116"
-    },
-    {
-      "title": "완전관해++북토크에+초대+합니다.+26년+9월+6일+(일)+13시++00분",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224376194846",
-      "date": "2026. 8. 1",
-      "logNo": "224376194846"
-    },
-    {
-      "title": "전립선암의+동종요법+치료+사례+근거는?",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224357497940",
-      "date": "2026. 7. 2",
-      "logNo": "224357497940"
-    },
-    {
-      "title": "쑥뜸의+세포독성+및+활성산소+조절+활성",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224355379530",
-      "date": "2026. 7. 2",
-      "logNo": "224355379530"
+      "title": "마음이+치유를+향하도록+—+사이먼튼+테라피+세미나+후기",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224419825976",
+      "date": "2026. 9. 2",
+      "logNo": "224419825976"
     },
     {
       "title": "앵거프리+밴드는+왜+만들어졌을까요?",
@@ -118,10 +64,64 @@
       "logNo": "224357497940"
     },
     {
-      "title": "쑥뜸의+세포독성+및+활성산소+조절+활성",
-      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224355379530",
+      "title": "마음이+치유를+향하도록+—+사이먼튼+테라피+세미나+후기",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224419825976",
+      "date": "2026. 9. 2",
+      "logNo": "224419825976"
+    },
+    {
+      "title": "앵거프리+밴드는+왜+만들어졌을까요?",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224410259459",
+      "date": "2026. 9. 1",
+      "logNo": "224410259459"
+    },
+    {
+      "title": "위빠사나",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224409265119",
+      "date": "2026. 9. 1",
+      "logNo": "224409265119"
+    },
+    {
+      "title": "완전관해의+희망을+직접경함할수있었던+북토크+현장",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224406362916",
+      "date": "2026. 9. 9",
+      "logNo": "224406362916"
+    },
+    {
+      "title": "암환자에게++이완과+명상이+굉장히+중요한+이유",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224397578155",
+      "date": "2026. 9. 1",
+      "logNo": "224397578155"
+    },
+    {
+      "title": "아르니카(Arnica)와+‘다쳤지만+다치지+않은+척하는+마음’",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224396281241",
+      "date": "2026. 8. 3",
+      "logNo": "224396281241"
+    },
+    {
+      "title": "사이먼튼+테라피+특별+세미나+오픈",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224393480495",
+      "date": "2026. 8. 2",
+      "logNo": "224393480495"
+    },
+    {
+      "title": "구강+효소",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224393295116",
+      "date": "2026. 8. 2",
+      "logNo": "224393295116"
+    },
+    {
+      "title": "완전관해++북토크에+초대+합니다.+26년+9월+6일+(일)+13시++00분",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224376194846",
+      "date": "2026. 8. 1",
+      "logNo": "224376194846"
+    },
+    {
+      "title": "전립선암의+동종요법+치료+사례+근거는?",
+      "url": "https://blog.naver.com/PostView.naver?blogId=tomas0124&logNo=224357497940",
       "date": "2026. 7. 2",
-      "logNo": "224355379530"
+      "logNo": "224357497940"
     }
   ]
 }
